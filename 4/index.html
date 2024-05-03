@@ -9,17 +9,30 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script>
     <script src="app.js" defer></script>
   </head>
   <body>
     <header>
       <h1>Vue Dynamic Styling</h1>
     </header>
+
     <section id="styling">
-      <div class="demo"></div>
-      <div class="demo"></div>
-      <div class="demo"></div>
+      <div
+        class="demo"
+        :class="{ active : boxASelected }"
+        @click="boxSelected('A')"
+      ></div>
+      <div
+        class="demo"
+        :class="{ active : boxBSelected }"
+        @click="boxSelected('B')"
+      ></div>
+      <div
+        class="demo"
+        :class="{ active : boxCSelected }"
+        @click="boxSelected('C')"
+      ></div>
     </section>
   </body>
 </html>
